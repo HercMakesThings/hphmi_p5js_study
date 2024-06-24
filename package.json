@@ -1,0 +1,24 @@
+{
+  "name": "High Performance HMI",
+  "version": "1.0.0",
+  "description": "spaceInvaders app with p5js, express, and we'll see what else",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon index.js"
+  },
+  "keywords": [
+    "game",
+    "browser"
+  ],
+  "author": "Jeremy D",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
