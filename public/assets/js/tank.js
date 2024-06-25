@@ -1,28 +1,29 @@
 class HpHmiTank {
 
     width = 180;
-    height = 210;
+    height = 190;
     level = 60;
 
-    render() { 
-        push();
+    render(p) { 
+        p.push();
         // translate(-(this.width/2), -(this.height/2));
-        translate(-(this.width/2), -this.height);
+        p.translate(-(this.width/2), -this.height);
         
-        stroke(0);
-        fill('#c9c9c9');
-        rect(this.x, this.y, this.width, this.height);
-        bezier(this.x, this.y, this.x+40, this.y+40, this.x+50, this.y+50, this.x+this.width, this.y+this.height);
+        p.stroke(0);
+        p.fill('#c9c9c9');
+        p.rect(this.x, this.y, this.width, this.height);
+        p.bezier(this.x, this.y, this.x+60, this.y-30, this.x+120, this.y-30, this.x+this.width, this.y);
+        p.bezier(this.x, this.y+this.height, this.x+60, this.y+this.height+30, this.x+120, this.y+this.height+30 ,this.x+this.width, this.y+this.height);
         // pop();
         // push();
-        translate(0, this.height-this.level);
-        fill(0,150,255);
-        rect(this.x, this.y, this.width, this.level);
-        pop();
+        p.translate(0, this.height-this.level);
+        p.fill(0,150,255);
+        p.rect(this.x, this.y, this.width, this.level);
+        p.pop();
     }
 
-    move(mouseX, mouseY) {
-        if(dist(mouseX, mouseY, this.x, this.y) < 20) {
+    move(p, mouseX, mouseY) {
+        if(p.dist(mouseX, mouseY, this.x, this.y) < 20) {
             this.x = mouseX;
             this.y = mouseY;
         }
